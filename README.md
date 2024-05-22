@@ -75,3 +75,42 @@ A collection of useful bookmarklets for various purposes.
   ```
   javascript: window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   ```
+
+
+## Safari Bookmarklets
+
+These are the essential bookmarklets I use with safari (iOS)
+
+- **Kill Sticky**: The famous kill sticky bookmarklet to remove fixed and sticky elements
+
+```
+javascript:(function()%7B(function%20()%20%7Bvar%20i%2C%20elements%20%3D%20document.querySelectorAll('body%20*')%3Bfor%20(i%20%3D%200%3B%20i%20%3C%20elements.length%3B%20i%2B%2B)%20%7Bif%20(getComputedStyle(elements%5Bi%5D).position%20%3D%3D%3D%20'fixed')%20%7Belements%5Bi%5D.parentNode.removeChild(elements%5Bi%5D)%3B%7D%7D%7D)()%7D)()
+```
+
+- **Replace font**: Replaces the font on page with a font of your choice 
+
+```
+javascript:(function()%20%7B%20%20%20document.querySelectorAll('*').forEach(e%20=%3E%20%7B%20%20%20%20%20if%20(!e.style.fontFamily.includes('monospace'))%20%7B%20%20%20%20%20%20%20e.style.fontFamily%20=%20'sans-serif';%20%20%20%20%20%7D%20else%20%7B%20%20%20%20%20%20%20e.style.fontFamily%20=%20'monospace';%20%20%20%20%20%7D%20%20%20%7D);%20%7D)();
+```
+
+- **Inject device max-width** : There still many webpage that will not set max-width for mobile phone era yet 
+
+Looking at you Mansoura university, you did not only suspended and kicked me out but still stuck at the early 2000s
+
+```
+javascript:(function()%20%7B%20%20%20document.head.insertAdjacentHTML('beforeend',%20%60%20%20%20%20%20%3Cmeta%20name=%22viewport%22%20content=%22width=device-width%22%20/%3E%20%20%20%20%20%3Cstyle%3E%20%20%20%20%20%20%20body%20%7B%20%20%20%20%20%20%20%20%20/*%20Without%20word-break:%20break-word,%20iOS%20Safari%2016.1%20lets%20%20%20%20%20%20%20%20%20%20*%20very%20long%20words%20e.g.%20URLs%20widen%20the%20page%20*/%20%20%20%20%20%20%20%20%20word-break:%20break-word;%20%20%20%20%20%20%20%20%20%20/*%20Don't%20let%20iOS%20Safari%20enlarge%20the%20font%20size%20when%20the%20phone%20is%20in%20landscape%20mode.%20%20%20%20%20%20%20%20%20%20*%20https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/%20%20%20%20%20%20%20%20%20%20*/%20%20%20%20%20%20%20%20%20-webkit-text-size-adjust:%20none;%20%20%20%20%20%20%20%20%20text-size-adjust:%20none;%20%20%20%20%20%20%20%7D%20%20%20%20%20%3C/style%3E%20%20%20%60);%20%7D)();
+```
+
+- **Nuke fixed elements** : This will remove all fixed elements which are mostly ads 
+
+```
+javascript:(function()%7B(function%20()%20%7Bvar%20i%2C%20elements%20%3D%20document.querySelectorAll('body%20*')%3Bfor%20(i%20%3D%200%3B%20i%20%3C%20elements.length%3B%20i%2B%2B)%20%7Bif%20(getComputedStyle(elements%5Bi%5D).position%20%3D%3D%3D%20'fixed')%20%7Belements%5Bi%5D.parentNode.removeChild(elements%5Bi%5D)%3B%7D%7D%7D)()%7D)()
+```
+
+- **Go to referrer** : How the hell I got to this page?
+
+```
+javascript:if(!document.referrer)%20alert(%22No%20referrer!%22);%20else%20document.location%20=%20document.referrer;%20void%200
+```
+
+
